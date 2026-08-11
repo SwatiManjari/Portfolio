@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-inner">
+            <nav class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle">☀️</button>
+            <button id="menu-toggle">≡</button>
+        </div>
+    </header>
+    <main>
+
+        <!---home section--->
+
+        <section id="home" class="hero container">
+            <h1>Hi! I'm Swati Manjari Panda</h1>
+            <p>Aspiring software developer. I build responsive and interactive web experiences using HTML, CSS and JavaScript.</p>
+            <div class="hero-proj-res">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+            </div>
+            <div class="hero-social">
+                <a href="https://github.com/SwatiManjari" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/swati-manjari-panda-463074406" target="_blank">LinkedIn</a>
+            </div>
+            <div class="hero-photo">
+                <img src="./ProfileImage.jpeg" alt="Profile Image">
+            </div>
+        </section>
+
+        <!---about section--->
+        <section id="about" class="container">
+            <div class="section-head">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="label">Education</div>
+                    <h3>BSc Computer Science</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Problem Solving</li>
+                        <li>Learning New Technology</li>
+                    </ul>
+                </div>
+                <div class="about-text">
+                    <p>I'm a Computer Science student interested in software development and web technologies. I enjoy turning ideas into clean, working interfaces.</p>
+                    <p>Right now I'm teaching myself Web development and working toward contributing to open source through GSoC.</p>
+                </div>
+            </div>
+        </section>
+
+        <!---Skills section--->
+
+        <section id="skills" class="container">
+            <div class="section-head">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>FrontEnd</h3>
+                    <div class="tag-row">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">BootStrap</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <div class="tag-row">
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">DBMS</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <div class="tag-row">
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">VSCode</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!----Projects--->
+
+        <section id="projects" class="container">
+            <div class="section-head">
+                <h2>Projects</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-thumbnail">Calculator</div>
+                    <div class="project-body">
+                        <h3>Calculator</h3>
+                        <p>HTML.CSS.JavaScript</p>
+                        <div class="project-links">
+                            <a href="https://swatimanjari.github.io/simpleCalculator/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/SwatiManjari/simpleCalculator" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-thumbnail">Sign-Up Page</div>
+                    <div class="project-body">
+                        <h3>Sign-Up Page</h3>
+                        <p>HTML.CSS.JavaScript</p>
+                        <div class="project-links">
+                            <a href="https://swatimanjari.github.io/SignUpPage/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/SwatiManjari/SignUpPage" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Resume section-->
+
+        <section id="resume" class="container">
+            <div class="resume-box">
+                <h2>Want to know more about me!</h2>
+                <p>Please Download my resume for the full picture</p>
+                <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            </div>
+        </section>
+
+        <!--Contact Section-->
+
+        <section id="contact" class="container">
+            <div class="section-head">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <a href="www.swatipanda2324@gmail.com">Email</a>
+                    <a href="https://github.com/SwatiManjari" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/swati-manjari-panda-463074406" target="_blank">LinkedIn</a>
+                </div>
+                <form id="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
+                    <p id="name-error"></p>
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                    <p id="email-error"></p>
+                    <label for="message">Message</label>
+                    <textarea id="message"></textarea>
+                    <p id="message-error"></p>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p id="form-status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer><p>2026-Swati Manjari Panda</p></footer>
+    <script src="index.js"></script>
+</body>
+</html>
