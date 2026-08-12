@@ -25,7 +25,7 @@ Portfolio/
 │
 ├── index.html
 ├── style.css
-├── script.js
+├── index.js
 └── README.md
 
 ## What I Learned
