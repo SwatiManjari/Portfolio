@@ -7,10 +7,10 @@
 }
 body.dark { --bg: #211815;
     --card: #2D211C;
-    --text: #F5EDE3;
-    --text-soft: #C4AEA0;
-    --border: #49372E;
-    --accent: #C49372;
+    --text: #F7F1E8;
+    --text-soft:  #C9B8AE;
+    --border: #4A3831;
+    --accent:  #B98263;
 }
 body
 {
@@ -51,7 +51,8 @@ header
 {
     position: sticky;
     top:0;
-    z-index: 100;
+    z-index: 1000;
+    padding: 12px 20px;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
 }
@@ -168,7 +169,7 @@ header
 {
     background: var(--text-soft);
     text-decoration: none;
-    color:black;
+    color:var(--text);
     padding: 5px;
     border-radius: 10px;
     margin: 10px;
@@ -211,6 +212,10 @@ header
 }
 }
 
+section
+{
+    scroll-margin-top: 110px;
+}
 .section-head
 {
     margin-bottom: 40px;
@@ -280,6 +285,7 @@ header
     border:1px solid black;
     border-radius: 12px;
     padding:20px;
+    color: var(--text);
 }
 .skill-card h3
 {
@@ -298,7 +304,7 @@ header
     border-radius:6px;
     background: var(--bg);
     border:1px solid black;
-    color:black;
+    color:var(--text);
 }
 @media(max-width:768px)
 {
@@ -391,6 +397,18 @@ header
     gap:14px;
     color:var(--text-soft);
 }
+.contact-info a
+{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background-color: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    font-size: large;
+}
 .contact-info:hover
 {
     color: var(--accent);
@@ -407,7 +425,7 @@ label
     font-size: x-large;
     margin-top: 14px;
     margin-bottom: 6px;
-    color: black;
+    color: var(--text);
 }
 input,textarea
 {
@@ -421,6 +439,7 @@ input,textarea
 textarea
 {
     height: 100px;
+    font-size: xx-larger;
 }
 #contact-form button 
 {
@@ -429,11 +448,13 @@ textarea
 #name-error,#email-error,#message-error
 {
     color:red;
-    font-size: medium;
+    font-size:larger;
+
 }
 #form-status
 {
     margin-top: 10px;
+    font-size: x-large;
 }
 @media(max-width:768px)
 {
