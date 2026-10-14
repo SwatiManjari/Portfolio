@@ -3,64 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Swati Manjari Panda | Portfolio</title>
+    <meta name="description" content="Swati Manjari Panda, Computer Science student and aspiring software developer building responsive web projects with HTML, CSS and JavaScript.">
+    <meta property="og:title" content="Swati Manjari Panda | Portfolio">
+    <meta property="og:description" content="Computer Science student and aspiring software developer. Projects, skills, open source contributions and resume.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://swatimanjari.github.io/Portfolio/ProfileImg.jpeg">
+    <meta name="theme-color" content="#F7F1E8">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239A6A4F'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23FFFDF9'%3ES%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load the heading font without blocking the first paint; headings show in the system font until it arrives. -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap"></noscript>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Apply the saved or system theme before the page paints, so dark mode does not flash light first.
+        (function()
+        {
+            const prefersDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.dataset.theme=localStorage.getItem("theme") || (prefersDark?"dark":"light");
+        })();
+    </script>
 </head>
 <body>
-    <header>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
         <div class="nav-inner">
-            <nav class="nav-links" id="nav-links">
-                <a href="#home">Home</a>
+            <a href="#home" class="brand">Swati Manjari Panda</a>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#open-source">Open source</a>
                 <a href="#resume">Resume</a>
                 <a href="#contact">Contact</a>
             </nav>
-        </div>
-        <div class="nav-actions">
-            <button id="theme-toggle">☀️</button>
-            <button id="menu-toggle">≡</button>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                </button>
+                <button id="menu-toggle" class="icon-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+            </div>
         </div>
     </header>
-    <main>
+    <main id="main">
 
         <!---home section--->
 
         <section id="home" class="hero container">
-            <h1>Hi! I'm Swati Manjari Panda</h1>
-            <p>Aspiring software developer. I build responsive and interactive web experiences using HTML, CSS and JavaScript.</p>
-            <div class="hero-proj-res">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="./resume.png" class="btn btn-ghost" download>Download Resume</a>
-            </div>
-            <div class="hero-social">
-                <a href="https://github.com/SwatiManjari" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/swati-manjari-panda-463074406" target="_blank">LinkedIn</a>
+            <div class="hero-text">
+                <h1><span class="hero-greeting">Hi! I'm</span> Swati Manjari Panda</h1>
+                <p class="hero-intro">Aspiring software developer. I build responsive and interactive web experiences using HTML, CSS and JavaScript.</p>
+                <div class="hero-proj-res">
+                    <a href="#projects" class="btn btn-primary">View projects</a>
+                    <a href="./resume.png" class="btn btn-ghost" download>Download resume</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/SwatiManjari" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/swati-manjari-panda-463074406" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:swatipanda2324@gmail.com">Email</a>
+                </div>
             </div>
             <div class="hero-photo">
-                <img src="./ProfileImg.jpeg" alt="Profile Image">
+                <img src="./ProfileImg.jpeg" srcset="./ProfileImg-600.jpeg 600w, ./ProfileImg.jpeg 1080w" sizes="(max-width: 760px) 132px, 380px" alt="Portrait of Swati Manjari Panda" width="1080" height="1920" fetchpriority="high">
             </div>
         </section>
 
         <!---about section--->
         <section id="about" class="container">
             <div class="section-head">
-                <h2>About Me</h2>
+                <h2>About me</h2>
             </div>
             <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a Computer Science student interested in software development and web technologies. I enjoy turning ideas into clean, working interfaces.</p>
+                    <p>Right now I'm teaching myself web development and working toward contributing to open source through GSoC.</p>
+                </div>
                 <div class="about-card">
-                    <div class="label">Education</div>
+                    <p class="label">Education</p>
                     <h3>BSc Computer Science</h3>
                     <ul>
                         <li>Web Development</li>
                         <li>Problem Solving</li>
                         <li>Learning New Technology</li>
                     </ul>
-                </div>
-                <div class="about-text">
-                    <p>I'm a Computer Science student interested in software development and web technologies. I enjoy turning ideas into clean, working interfaces.</p>
-                    <p>Right now I'm teaching myself Web development and working toward contributing to open source through GSoC.</p>
                 </div>
             </div>
         </section>
@@ -71,31 +101,31 @@
             <div class="section-head">
                 <h2>Skills</h2>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>FrontEnd</h3>
-                    <div class="tag-row">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">BootStrap</span>
-                    </div>
+            <div class="skills-list">
+                <div class="skill-row">
+                    <h3>Frontend</h3>
+                    <ul class="tag-row">
+                        <li class="tag">HTML</li>
+                        <li class="tag">CSS</li>
+                        <li class="tag">JavaScript</li>
+                        <li class="tag">Bootstrap</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
+                <div class="skill-row">
                     <h3>Programming</h3>
-                    <div class="tag-row">
-                        <span class="tag">Python</span>
-                        <span class="tag">C</span>
-                        <span class="tag">DBMS</span>
-                    </div>
+                    <ul class="tag-row">
+                        <li class="tag">Python</li>
+                        <li class="tag">C</li>
+                        <li class="tag">DBMS</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
+                <div class="skill-row">
                     <h3>Tools</h3>
-                    <div class="tag-row">
-                        <span class="tag">Git</span>
-                        <span class="tag">GitHub</span>
-                        <span class="tag">VSCode</span>
-                    </div>
+                    <ul class="tag-row">
+                        <li class="tag">Git</li>
+                        <li class="tag">GitHub</li>
+                        <li class="tag">VS Code</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -107,38 +137,77 @@
                 <h2>Projects</h2>
             </div>
             <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-thumbnail">Task Manager</div>
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <h3>Task Manager</h3>
+                    </div>
                     <div class="project-body">
-                        <h3>task-manager</h3>
-                        <p>HTML.CSS.JavaScript</p>
+                        <p>Add, complete and delete tasks in a simple to-do app.</p>
+                        <ul class="tag-row">
+                            <li class="tag">HTML</li>
+                            <li class="tag">CSS</li>
+                            <li class="tag">JavaScript</li>
+                        </ul>
                         <div class="project-links">
-                            <a href="https://swatimanjari.github.io/task-manager/" target="_blank">Live Demo</a>
-                            <a href="https://github.com/SwatiManjari/task-manager" target="_blank">GitHub</a>
+                            <a href="https://swatimanjari.github.io/task-manager/" target="_blank" rel="noopener noreferrer">Live demo</a>
+                            <a href="https://github.com/SwatiManjari/task-manager" target="_blank" rel="noopener noreferrer">Source code</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">Music Player</div>
-                    <div class="project-body">
+                </article>
+                <article class="project-card">
+                    <div class="project-thumbnail">
                         <h3>Music Player</h3>
-                        <p>HTML.CSS.JavaScript</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Play, pause and skip songs with a progress bar and playlist.</p>
+                        <ul class="tag-row">
+                            <li class="tag">HTML</li>
+                            <li class="tag">CSS</li>
+                            <li class="tag">JavaScript</li>
+                        </ul>
                         <div class="project-links">
-                            <a href="https://swatimanjari.github.io/music-player/" target="_blank">Live Demo</a>
-                            <a href="https://github.com/SwatiManjari/music-player" target="_blank">GitHub</a>
+                            <a href="https://swatimanjari.github.io/music-player/" target="_blank" rel="noopener noreferrer">Live demo</a>
+                            <a href="https://github.com/SwatiManjari/music-player" target="_blank" rel="noopener noreferrer">Source code</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
+        </section>
+
+        <!--Open source section-->
+
+        <section id="open-source" class="container">
+            <div class="section-head">
+                <h2>Open source</h2>
+                <p>Contributions to projects outside my own repositories.</p>
+            </div>
+            <ul class="oss-list">
+                <li class="oss-item">
+                    <div>
+                        <h3><a href="https://github.com/libredb/libredb-studio" target="_blank" rel="noopener noreferrer">LibreDB Studio</a></h3>
+                        <p>An open-source, browser-based SQL IDE for PostgreSQL, MySQL, MongoDB and more. I contribute to its documentation, including the guide for adding a new database provider.</p>
+                    </div>
+                    <a class="oss-link" href="https://github.com/libredb/libredb-studio/pulls?q=is%3Apr+author%3ASwatiManjari" target="_blank" rel="noopener noreferrer">My pull requests</a>
+                </li>
+                <li class="oss-item">
+                    <div>
+                        <h3><a href="https://github.com/brgkdm/DayZen-good-first-issue" target="_blank" rel="noopener noreferrer">DayZen</a></h3>
+                        <p>Improved layout spacing, typography and mobile responsiveness.</p>
+                    </div>
+                    <a class="oss-link" href="https://github.com/brgkdm/DayZen-good-first-issue/pull/115" target="_blank" rel="noopener noreferrer">Pull request #115</a>
+                </li>
+            </ul>
         </section>
 
         <!--Resume section-->
 
         <section id="resume" class="container">
             <div class="resume-box">
-                <h2>Want to know more about me!</h2>
-                <p>Please Download my resume for the full picture</p>
-                <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                <div>
+                    <h2>Want to know more about me?</h2>
+                    <p>Download my resume for the full picture.</p>
+                </div>
+                <a href="./resume.png" class="btn btn-primary" download>Download resume</a>
             </div>
         </section>
 
@@ -150,27 +219,41 @@
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <a href="www.swatipanda2324@gmail.com">Email</a>
-                    <a href="https://github.com/SwatiManjari" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/swati-manjari-panda-463074406" target="_blank">LinkedIn</a>
+                    <p>Have a question, an internship opportunity or an open source project in mind? Send me a message.</p>
+                    <ul>
+                        <li><a href="mailto:swatipanda2324@gmail.com">swatipanda2324@gmail.com</a></li>
+                        <li><a href="https://github.com/SwatiManjari" target="_blank" rel="noopener noreferrer">github.com/SwatiManjari</a></li>
+                        <li><a href="https://linkedin.com/in/swati-manjari-panda-463074406" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    </ul>
                 </div>
-                <form id="contact-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name">
-                    <p id="name-error"></p>
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
-                    <p id="email-error"></p>
-                    <label for="message">Message</label>
-                    <textarea id="message"></textarea>
-                    <p id="message-error"></p>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <p id="form-status"></p>
+                <form id="contact-form" data-email="swatipanda2324@gmail.com" novalidate>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error">
+                        <p id="name-error" class="field-error" aria-live="polite"></p>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+                        <p id="email-error" class="field-error" aria-live="polite"></p>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" aria-describedby="message-error"></textarea>
+                        <p id="message-error" class="field-error" aria-live="polite"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send via email</button>
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
     </main>
-    <footer><p>2026-Swati Manjari Panda</p></footer>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> Swati Manjari Panda</p>
+            <a href="#home">Back to top</a>
+        </div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>
